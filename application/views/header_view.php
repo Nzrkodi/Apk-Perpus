@@ -61,41 +61,65 @@
                 </div>
             </div>
             <!-- Mobile Menu start -->
-            <div class="mobile-menu-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="mobile-menu">
-                                <nav id="dropdown">
-                                    <ul class="mobile-menu-nav">
-                                        <li><a href="events.html"><i class="fa fa-home"></i> Dashboard</a></li>
-                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="#"><i class="fa fa-folder"></i> Data <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
-                                            <ul id="Tablesmob" class="collapse dropdown-header-top">
-                                                <li><a href="assets/static-table.html">Buku</a>
-                                                </li>
-                                                <li><a href="data-table.html">Kategori</a>
-                                                </li>
-                                                <li><a href="data-table.html">Rak</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="#"><i class="fa fa-exchange"></i> Transaksi <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
-                                            <ul id="Tablesmob" class="collapse dropdown-header-top">
-                                                <li><a href="assets/static-table.html">Peminjaman</a>
-                                                </li>
-                                                <li><a href="data-table.html">Pengembalian</a>
-                                                </li>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="events.html"><i class="fa fa-money"></i> Denda</a></li>
-                                    </ul>
-                                </nav>
+            <?php if($this->session->userdata('level') == 'Petugas'){?>
+                <div class="mobile-menu-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="mobile-menu">
+                                    <nav id="dropdown">
+                                        <ul class="mobile-menu-nav">
+                                            <li><a href="<?= base_url("dashboard");?>"><i class="fa fa-home"></i> Dashboard</a></li>
+                                            <li><a data-toggle="collapse" data-target="#Tablesmob"><i class="fa fa-folder"></i> Data <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                                <ul id="Tablesmob" class="collapse dropdown-header-top">
+                                                    <li><a href="<?= base_url("data");?>">Buku</a>
+                                                    </li>
+                                                    <li><a href="<?= base_url("data/kategori");?>">Kategori</a>
+                                                    </li>
+                                                    <li><a href="<?= base_url("data/rak");?>">Rak</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a data-toggle="collapse" data-target="#Tablesmob" href="#"><i class="fa fa-exchange"></i> Transaksi <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                                <ul id="Tablesmob" class="collapse dropdown-header-top">
+                                                    <li><a href="<?= base_url("transaksi");?>">Peminjaman</a>
+                                                    </li>
+                                                    <li><a href="<?= base_url("transaksi/kembali");?>">Pengembalian</a>
+                                                    </li>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="<?= base_url("transaksi/denda");?>"><i class="fa-solid fa-money-check-dollar"></i> Denda</a></li>
+                                            <li><a href="<?= base_url("user");?>"><i class="fa-solid fa-money-check-dollar"></i> Menage User</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            <?php }?>
+
+            <?php if($this->session->userdata('level') == 'Siswa'){?>
+                <div class="mobile-menu-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="mobile-menu">
+                                    <nav id="dropdown">
+                                        <ul class="mobile-menu-nav">
+                                            <li><a href="<?= base_url("dashboard");?>"><i class="fa fa-home"></i> Dashboard</a></li>
+                                            <li><a href="<?= base_url("data");?>"><i class="fa fa-book"></i> Data Buku</a></li>
+                                            <li><a href="<?= base_url("transaksi");?>"><i class="fa fa-download"></i> Peminjaman</a></li>
+                                            <li><a href="<?= base_url("transaksi/kembali");?>"><i class="fa fa-upload"></i> Pengembalian</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php }?>
             <!-- Mobile Menu end -->
             <br>
         </div>

@@ -22,6 +22,7 @@
                                         data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                                         <thead>
                                             <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
                                                 <th>No</th>
                                                 <th>ID</th>
                                                 <th>Foto</th>
@@ -37,6 +38,7 @@
                                         <tbody>
                                          <?php $no=1;foreach($user as $isi){?>
                                             <tr>
+                                                <td></td>
                                                 <td><?= $no;?></td>
                                                 <td><?= $isi['anggota_id'];?></td>
                                                 <td>

@@ -14,15 +14,19 @@
                     </div>
                     <div class="sparkline13-graph">
                     <div class="datatable-dashv1-list custom-datatable-overright">
-                            <div id="toolbar">
+                            <?php if($this->session->userdata('level') == 'Petugas'){?>
+                                <div id="toolbar">
                                 <select class="form-control dt-tb">
                                     <option value="">Export Basic</option>
                                     <option value="all">Export All</option>
                                     <option value="selected">Export Selected</option>
                                 </select>
                             </div>
-                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
-                                data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                            <?php }?>
+                            <?php if($this->session->userdata('level') == 'Siswa'){?>
+                                <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-key-events="true" data-show-toggle="true">
+                            <?php }?>
                                 <thead>
                                     <tr>
                                         <th>No</th>

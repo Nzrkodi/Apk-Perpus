@@ -1,3 +1,11 @@
+<?php
+	$idkat = $buku->id_kategori;
+	$idrak = $buku->id_rak;
+
+	$kat = $this->M_Admin->get_tableid_edit('tbl_kategori','id_kategori',$idkat);
+	$rak = $this->M_Admin->get_tableid_edit('tbl_rak','id_rak',$idrak);
+?>
+
 <div class="basic-form-area mg-b-15">
     <div class="container-fluid">
         <div class="row">
@@ -10,13 +18,7 @@
                     </div>
                     <div class="sparkline10-graph">
                         <div class="input-knob-dial-wrap">
-                            <?php
-	$idkat = $buku->id_kategori;
-	$idrak = $buku->id_rak;
 
-	$kat = $this->M_Admin->get_tableid_edit('tbl_kategori','id_kategori',$idkat);
-	$rak = $this->M_Admin->get_tableid_edit('tbl_rak','id_rak',$idrak);
-?>
 <div class="content-wrapper">
   <section class="content">
 	<div class="row">

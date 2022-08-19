@@ -10,6 +10,7 @@
                         	<hr>
 							<?php }else{?>
 							<h1 class="text-center">Tambah rak</h1>
+							<?php if(!empty($this->session->flashdata())){ echo $this->session->flashdata('pesan');}?>
 							<hr>
 							<?php }?>
                             
@@ -39,7 +40,7 @@
 										</div>
 										<br/>
 										<input type="hidden" name="tambah" value="tambah">
-										<button type="submit" class="btn btn-success widget-btn-1" style="margin-top: -15px;"> <i class="fa fa-plus"></i> Tambah Rak</button>
+										<button type="submit" class="btn btn-success widget-btn-1" style="margin-top: -15px; margin-bottom: 15px;"> <i class="fa fa-plus"></i> Tambah Rak</button>
 									</form>
 									<?php }?>
                         		</div>
@@ -58,9 +59,9 @@
 												<td><?= $no;?></td>
 												<td><?= $isi['nama_rak'];?></td>
 												<td style="width:20%;">
-													<a href="<?= base_url('data/rak?id='.$isi['id_rak']);?>"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a>
+													<a href="<?= base_url('data/rak?id='.$isi['id_rak']);?>"><button class="btn btn-success widget-btn-1"><i class="fa fa-edit"></i></button></a>
 													<a href="<?= base_url('data/rakproses?rak_id='.$isi['id_rak']);?>" onclick="return confirm('Anda yakin Rak Buku ini akan dihapus ?');">
-													<button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
+													<button class="btn btn-danger widget-btn-4"><i class="fa fa-trash"></i></button></a>
 												</td>
 											</tr>
 										<?php $no++;}?>

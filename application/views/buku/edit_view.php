@@ -73,7 +73,7 @@
                                         </div>
                                         <div class="form-group">
                                         <label>Lampiran Buku <small style="color:green">(pdf) * ganti opsional</small></label>
-                                            <input type="file" accept="" name="lampiran">
+                                            <input type="file" accept="pdf/*" name="lampiran">
                                             <br>
                                             <?php if(!empty($buku->lampiran !== "0")){?>
                                             <a href="<?= base_url('assets/image/buku/'.$buku->lampiran);?>" class="btn btn-primary btn-md" target="_blank">

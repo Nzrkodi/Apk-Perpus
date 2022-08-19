@@ -157,7 +157,7 @@ class Data extends CI_Controller {
 					'asal_buku' => htmlentities($post['asal']), 
 					'isi' => $this->input->post('ket'), 
 					'jml'=> htmlentities($post['jml']),  
-					'tgl_masuk' => date('Y-m-d H:i:s')
+					'tgl_masuk' => date('Y-m-d')
 				);
 
 				
@@ -185,7 +185,7 @@ class Data extends CI_Controller {
 					'asal_buku' => htmlentities($post['asal']),
 					'isi' => $this->input->post('ket'), 
 					'jml'=> htmlentities($post['jml']),  
-					'tgl_masuk' => date('Y-m-d H:i:s')
+					'tgl_masuk' => date('Y-m-d')
 				);
 
 			}elseif(!empty($_FILES['lampiran']['name'])){
@@ -217,7 +217,7 @@ class Data extends CI_Controller {
 					'asal_buku' => htmlentities($post['asal']),
 					'isi' => $this->input->post('ket'), 
 					'jml'=> htmlentities($post['jml']),  
-					'tgl_masuk' => date('Y-m-d H:i:s')
+					'tgl_masuk' => date('Y-m-d')
 				);
 
 				
@@ -253,7 +253,7 @@ class Data extends CI_Controller {
 			$post= $this->input->post();
 			// setting konfigurasi upload
 			$config['upload_path'] = './assets/image/buku/';
-			$config['allowed_types'] = 'gif|jpg|jpeg|png'; 
+			$config['allowed_types'] = 'gif|jpg|jpeg|pdf|png'; 
 			$config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 			// load library upload
         	$this->load->library('upload',$config);
@@ -303,7 +303,7 @@ class Data extends CI_Controller {
 					'asal_buku' => htmlentities($post['asal']), 
 					'isi' => $this->input->post('ket'), 
 					'jml'=> htmlentities($post['jml']),  
-					'tgl_masuk' => date('Y-m-d H:i:s')
+					'tgl_masuk' => date('Y-m-d')
 				);
 
 				
@@ -337,7 +337,7 @@ class Data extends CI_Controller {
 					'asal_buku' => htmlentities($post['asal']), 
 					'isi' => $this->input->post('ket'), 
 					'jml'=> htmlentities($post['jml']),  
-					'tgl_masuk' => date('Y-m-d H:i:s')
+					'tgl_masuk' => date('Y-m-d')
 				);
 
 			}elseif(!empty($_FILES['lampiran']['name'])){
@@ -373,7 +373,7 @@ class Data extends CI_Controller {
 					'thn_buku' => htmlentities($post['thn']), 
 					'isi' => $this->input->post('ket'), 
 					'jml'=> htmlentities($post['jml']),  
-					'tgl_masuk' => date('Y-m-d H:i:s')
+					'tgl_masuk' => date('Y-m-d')
 				);
 
 				
@@ -389,7 +389,7 @@ class Data extends CI_Controller {
 					'asal_buku' => htmlentities($post['asal']),
 					'isi' => $this->input->post('ket'), 
 					'jml'=> htmlentities($post['jml']),  
-					'tgl_masuk' => date('Y-m-d H:i:s')
+					'tgl_masuk' => date('Y-m-d')
 				);
 			}
 
@@ -440,9 +440,9 @@ class Data extends CI_Controller {
 			$this->db->insert('tbl_kategori', $data);
 
 			
-			$this->session->set_flashdata('pesan','<div id="notifikasi"><div class="alert alert-success">
-			<p> Tambah Kategori Sukses !</p>
-			</div></div>');
+			$this->session->set_flashdata('pesan','<div class="alert alert-success" role="alert">
+			<strong>Success!</strong> Data Berhasil Ditambahkan.
+		</div>');
 			redirect(base_url('data/kategori'));  
 		}
 

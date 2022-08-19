@@ -11,101 +11,104 @@
                     </div>
                     <div class="sparkline10-graph">
                         <div class="input-knob-dial-wrap">
-                            <div class="container-fluid">
-                                <div class="col-sm-5">
-                                <table class="table table-striped">
-                                    <tr style="background:darkcyan; color: white;">
-                                        <td colspan="3">Data Transaksi</td>
-                                    </tr>
-                                    <tr>
-                                        <td>No Peminjaman</td>
-                                        <td>:</td>
-                                        <td>
-                                            <?= $pinjam->pinjam_id;?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tgl Peminjaman</td>
-                                        <td>:</td>
-                                        <td>
-                                            <?= $pinjam->tgl_pinjam;?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nomor Buku</td>
-                                        <td>:</td>
-                                        <td>
-                                            <?= $pinjam->no_buku;?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tgl pengembalian</td>
-                                        <td>:</td>
-                                        <td>
-                                            <?= $pinjam->tgl_balik;?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>ID Anggota</td>
-                                        <td>:</td>
-                                        <td>
-                                            <?= $pinjam->anggota_id;?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Biodata</td>
-                                        <td>:</td>
-                                        <td>
-                                            <?php
-                                            $user = $this->M_Admin->get_tableid_edit('tbl_login','anggota_id',$pinjam->anggota_id);
-                                            error_reporting(0);
-                                            if($user->nama != null)
-                                            {
-                                                echo '<table class="table table-striped">
-                                                            <tr>
-                                                                <td>Nama Anggota</td>
-                                                                <td>:</td>
-                                                                <td>'.$user->nama.'</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Telepon</td>
-                                                                <td>:</td>
-                                                                <td>'.$user->telepon.'</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>E-mail</td>
-                                                                <td>:</td>
-                                                                <td>'.$user->email.'</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Alamat</td>
-                                                                <td>:</td>
-                                                                <td>'.$user->alamat.'</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Level</td>
-                                                                <td>:</td>
-                                                                <td>'.$user->level.'</td>
-                                                            </tr>
-                                                        </table>';
-                                            }else{
-                                                echo 'Anggota Tidak Ditemukan !';
-                                            }
-                                            ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Lama Peminjaman</td>
-                                        <td>:</td>
-                                        <td>
-                                            <?= $pinjam->lama_pinjam;?> Hari
-                                        </td>
-                                    </tr>
-                                </table>
+                            <div class="row">
+                            <div class="col-sm-5">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <tr style="background: #0060ff; color: white;">
+                                            <td colspan="3">Data Transaksi</td>
+                                        </tr>
+                                        <tr>
+                                            <td>No Peminjaman</td>
+                                            <td>:</td>
+                                            <td>
+                                                <?= $pinjam->pinjam_id;?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tgl Peminjaman</td>
+                                            <td>:</td>
+                                            <td>
+                                                <?= $pinjam->tgl_pinjam;?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Nomor Buku</td>
+                                            <td>:</td>
+                                            <td>
+                                                <?= $pinjam->no_buku;?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tgl pengembalian</td>
+                                            <td>:</td>
+                                            <td>
+                                                <?= $pinjam->tgl_balik;?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>ID Anggota</td>
+                                            <td>:</td>
+                                            <td>
+                                                <?= $pinjam->anggota_id;?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Biodata</td>
+                                            <td>:</td>
+                                            <td>
+                                                <?php
+                                                $user = $this->M_Admin->get_tableid_edit('tbl_login','anggota_id',$pinjam->anggota_id);
+                                                error_reporting(0);
+                                                if($user->nama != null)
+                                                {
+                                                    echo '<table class="table table-striped">
+                                                                <tr>
+                                                                    <td>Nama Anggota</td>
+                                                                    <td>:</td>
+                                                                    <td>'.$user->nama.'</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Telepon</td>
+                                                                    <td>:</td>
+                                                                    <td>'.$user->telepon.'</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>E-mail</td>
+                                                                    <td>:</td>
+                                                                    <td>'.$user->email.'</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Alamat</td>
+                                                                    <td>:</td>
+                                                                    <td>'.$user->alamat.'</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Level</td>
+                                                                    <td>:</td>
+                                                                    <td>'.$user->level.'</td>
+                                                                </tr>
+                                                            </table>';
+                                                }else{
+                                                    echo 'Anggota Tidak Ditemukan !';
+                                                }
+                                                ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Lama Peminjaman</td>
+                                            <td>:</td>
+                                            <td>
+                                                <?= $pinjam->lama_pinjam;?> Hari
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                             <div class="col-sm-7">
+                                <div class="table-responsive">
                                 <table class="table table-striped">
-                                    <tr style="background:darkcyan; color: white;">
+                                    <tr style="background: #0060ff; color: white;">
                                         <td colspan="3">Pinjam Buku</td>
                                     </tr>
                                     <tr>
@@ -208,7 +211,8 @@
                                         </td>
                                     </tr>
                                 </table>
-                            </div>
+                                </div>
+                            </div>   
                             <div class="pull-right">
                                 <a data-toggle="modal" data-target="#TableDenda" class="btn btn-primary btn-md" style="margin-left:1pc;">
                                     <i class="fa fa-sign-in"></i> Kembalikan</a>

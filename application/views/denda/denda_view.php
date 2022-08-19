@@ -10,6 +10,7 @@
                         	<hr>
 							<?php }else{?>
 							<h1 class="text-center">Tambah Harga Denda</h1>
+							<?php if(!empty($this->session->flashdata())){ echo $this->session->flashdata('pesan');}?>
 							<hr>
 							<?php }?>
                             
@@ -51,36 +52,38 @@
 									<?php }?>
                         		</div>
                         		<div class="col-sm-8">
-                        		<table id="table2" class="table table-bordered table-striped table" width="100%">
-								<thead>
-									<tr>
-										<th>No</th>
-										<th>Harga Denda</th>
-										<th>Status</th>
-										<th>Mulai Tanggal</th>
-										<th>Aksi</th>
-									</tr>
-								</thead>
-								<tbody>
-								<?php $no=1;foreach($denda->result_array() as $isi){?>
-									<tr>
-										<td><?= $no;?></td>
-										<td><?= $isi['harga_denda'];?></td>
-										<td><?= $isi['stat'];?></td>
-										<td><?= $isi['tgl_tetap'];?></td>
-										<td style="width:20%;">
-											<a href="<?= base_url('transaksi/denda?id='.$isi['id_biaya_denda']);?>"><button class="btn btn-warning widget-btn-3"><i class="fa fa-edit"></i></button></a>
-											<?php if($isi['stat'] == 'Aktif'){?>
-											<button class="btn btn-info widget-btn-2"><i class="fa fa-ban"></i></button>
-											<?php }else{?>
-											<a href="<?= base_url('transaksi/dendaproses?denda_id='.$isi['id_biaya_denda']);?>" onclick="return confirm('Anda yakin Biaya denda ini akan dihapus ?');">
-											<button class="btn btn-danger widget-btn-4"><i class="fa fa-trash"></i></button></a>
-											<?php }?>
-										</td>
-									</tr>
-								<?php $no++;}?>
-								</tbody>
-							</table>
+									<div class="table-responsive">
+									<table id="table2" class="table table-bordered table-striped">
+										<thead>
+											<tr>
+												<th>No</th>
+												<th>Harga Denda</th>
+												<th>Status</th>
+												<th>Mulai Tanggal</th>
+												<th>Aksi</th>
+											</tr>
+										</thead>
+										<tbody>
+										<?php $no=1;foreach($denda->result_array() as $isi){?>
+											<tr>
+												<td><?= $no;?></td>
+												<td><?= $isi['harga_denda'];?></td>
+												<td><?= $isi['stat'];?></td>
+												<td><?= $isi['tgl_tetap'];?></td>
+												<td style="width:20%;">
+													<a href="<?= base_url('transaksi/denda?id='.$isi['id_biaya_denda']);?>"><button class="btn btn-success widget-btn-1"><i class="fa fa-edit"></i></button></a>
+													<?php if($isi['stat'] == 'Aktif'){?>
+													<button class="btn btn-info widget-btn-2"><i class="fa fa-ban"></i></button>
+													<?php }else{?>
+													<a href="<?= base_url('transaksi/dendaproses?denda_id='.$isi['id_biaya_denda']);?>" onclick="return confirm('Anda yakin Biaya denda ini akan dihapus ?');">
+													<button class="btn btn-danger widget-btn-4"><i class="fa fa-trash"></i></button></a>
+													<?php }?>
+												</td>
+											</tr>
+										<?php $no++;}?>
+										</tbody>
+									</table>
+									</div>
                         		</div>
                         	</div>
                         </div>

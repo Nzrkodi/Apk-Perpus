@@ -15,14 +15,14 @@
                                     <div class="col-lg-12">
                                         <div class="col-md-6">
                                             <div class="chosen-select-single mg-b-20">
-                                                <label>Basic Select</label>
+                                                <label><b>Kategori</b></label>
                                                 <select name="kategori" data-placeholder="Choose a Country..." class="chosen-select" tabindex="-1" required>
                                                         <option disabled selected value> -- Pilih Kategori -- </option>
                                                         <?php foreach($kats as $isi){?>
                                                             <option value="<?= $isi['id_kategori'];?>"><?= $isi['nama_kategori'];?></option>
                                                         <?php }?>
                                                 </select>
-                                                <label>Basic Select</label>
+                                                <label><b>Rak</b></label>
                                                 <select name="rak" data-placeholder="Choose a Country..." class="chosen-select" tabindex="-1" required>
                                                         <option disabled selected value> -- Pilih Rak / Lokasi -- </option>
                                                         <?php foreach($rakbuku as $isi){?>

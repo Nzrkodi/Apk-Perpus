@@ -4,12 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> | Kiaalap - Kiaalap Admin Template</title>
+    <title> PerpusMan4 | <?= $title_web ?> </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
         ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>assets/static/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>assets/static/img/sman4.png">
     <!-- Google Fonts
         ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
@@ -57,6 +57,7 @@
     <!-- style CSS
         ============================================ -->
     <link rel="stylesheet" href="<?= base_url(); ?>assets/static/style.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/static/css/alerts.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/static/css/data-table/bootstrap-table.css">
     <link rel="stylesheet" href="<?= base_url(); ?>assets/static/css/data-table/bootstrap-editable.css">
     <!-- responsive CSS
@@ -97,10 +98,10 @@
 
 <body>
     <!-- Start Left menu area -->
-    <div class="left-sidebar-pro">
-        <nav id="sidebar" class="">
+    <div class="left-sidebar-pro" >
+        <nav id="sidebar" class="" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
             <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="<?= base_url(); ?>assets/static/img/logo/logo1.png" alt="" /></a>
+                <a href="index.html"><img class="main-logo" src="<?= base_url(); ?>assets/static/img/logo/logo1.png" alt=""/></a>
                 <strong><a href="index.html"><img src="<?= base_url(); ?>assets/static/img/logo/logosn1.png" alt="" /></a></strong>
             </div>
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
@@ -161,23 +162,23 @@
                         <?php if($this->session->userdata('level') == 'Siswa'){?>
                             <li class="<?php if($this->uri->uri_string() == 'dashboard'){ echo 'active';}?> ">
                                 <a href="<?= base_url("dashboard");?>" class="cursor">
-                                    <i class="fa fa-home text-primary"></i> <span class="text">Dashboard </span>
+                                    <i class="fa fa-home "></i> <span class="text">Dashboard </span>
                                 </a>
                             </li>
                             <li class="<?php if($this->uri->uri_string() == 'data'){ echo 'active';}?>
                             <?php if($this->uri->uri_string() == 'data/bukudetail/'.$this->uri->segment('3')){ echo 'active';}?>">
                                 <a href="<?= base_url("data");?>" class="cursor">
-                                    <i class="fa fa-search text-primary"></i>  <span class="text">Cari Buku</span>
+                                    <i class="fa fa-search "></i>  <span class="text">Cari Buku</span>
                                 </a>
                             </li>
                             <li class="<?php if($this->uri->uri_string() == 'transaksi'){ echo 'active';}?>">
                                 <a href="<?= base_url("transaksi");?>" class="cursor">
-                                    <i class="fa fa-upload text-primary"></i> <span class="text">Data Peminjaman </span>
+                                    <i class="fa fa-upload "></i> <span class="text">Data Peminjaman </span>
                                 </a>
                             </li>
                             <li class="<?php if($this->uri->uri_string() == 'transaksi/kembali'){ echo 'active';}?>">
                                 <a href="<?= base_url("transaksi/kembali");?>" class="cursor">
-                                    <i class="fa fa-upload text-primary"></i> <span class="text">Data Pengembalian</span>
+                                    <i class="fa fa-upload "></i> <span class="text">Data Pengembalian</span>
                                 </a>
                             </li>
                         <?php }?>

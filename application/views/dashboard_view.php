@@ -9,7 +9,7 @@ $d = $this->db->query("SELECT * FROM tbl_login WHERE id_login = '$idbo'")->row()
                 <div class="col-md-6">
                     <div class="widget-cl-1">
                         <h1 class="text-success" style="margin-top: 100px;"><b>Hallo <?= $d->nama;?></b></h2>
-                        <h3>Selamat Datang di Perpustakaan Melati <br>SMA NEGERI 4 PALU</h3>
+                        <h3>Selamat Datang di Perpustakaan Melati <br>SMA NEGERI 4 PALU</h3><br>
                         <h4>Silahkan Klik Dibawah ini Untuk Pencarian Buku....</h4>
                         <a href="<?= base_url("data");?>" class="btn btn-success widget-btn-1"><i class="fa fa-search"></i> <i>Search</i></a>
                     </div>
