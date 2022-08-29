@@ -5,7 +5,7 @@
                 <div class="sparkline12-list" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
                     <div class="sparkline12-hd">
                         <div class="main-sparkline12-hd">
-                            <h1 class="text-center">Detail Peminjaman</h1>
+                            <h1 class="text-center">Detail Peminjaman Kelas</h1>
                         </div>
                         <hr>
                     </div>
@@ -33,17 +33,17 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>Tgl pengembalian</td>
-                                            <td>:</td>
-                                            <td>
-                                                <?= $pinjam->tgl_balik;?>
-                                            </td>
-                                        </tr>
-                                        <tr>
                                             <td>ID Siswa</td>
                                             <td>:</td>
                                             <td>
                                                 <?= $pinjam->anggota_id;?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kelas</td>
+                                            <td>:</td>
+                                            <td>
+                                                <?= $pinjam->kelas;?>
                                             </td>
                                         </tr>
                                         <tr>
@@ -76,23 +76,11 @@
                                                                     <td>:</td>
                                                                     <td>'.$user->alamat.'</td>
                                                                 </tr>
-                                                                <tr>
-                                                                    <td>Level</td>
-                                                                    <td>:</td>
-                                                                    <td>'.$user->level.'</td>
-                                                                </tr>
                                                             </table>';
                                                 }else{
                                                     echo 'Siswa Tidak Ditemukan !';
                                                 }
                                                 ?>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Lama Peminjaman</td>
-                                            <td>:</td>
-                                            <td>
-                                                <?= $pinjam->lama_pinjam;?> Hari
                                             </td>
                                         </tr>
                                     </table>
@@ -108,7 +96,7 @@
                                                 <td>Status</td>
                                                 <td>:</td>
                                                 <td class="text-success">
-                                                    <?= $pinjam->status;?>
+                                                    <b><?= $pinjam->status;?></b>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -127,43 +115,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Denda</td>
+                                                <td>Jumlah Buku</td>
                                                 <td>:</td>
                                                 <td>
-                                                    
-                                                    <?php 
-                                                        $pinjam_id = $pinjam->pinjam_id;
-                                                        $denda = $this->db->query("SELECT * FROM tbl_denda WHERE pinjam_id = '$pinjam_id'");
-                                                        $total_denda = $denda->row();
-
-                                                        if($pinjam->status == 'Di Kembalikan')
-                                                        {
-                                                            echo $this->M_Admin->rp($total_denda->denda);
-                                                            
-                                                        }else{
-                                                            $jml = $this->db->query("SELECT * FROM tbl_pinjam WHERE pinjam_id = '$pinjam_id'")->num_rows();         
-                                                            $date1 = date('Ymd');
-                                                            $date2 = preg_replace('/[^0-9]/','',$pinjam->tgl_balik);
-                                                            $diff = $date1 - $date2;
-                                                            if($diff > 0 )
-                                                            {
-                                                                echo $diff.' hari';
-                                                                $dd = $this->M_Admin->get_tableid_edit('tbl_biaya_denda','stat','Aktif'); 
-                                                                echo '<p style="color:red;font-size:18px;">'.$this->M_Admin->rp($jml*($dd->harga_denda*$diff)).' 
-                                                                </p><small style="color:#333;">* Untuk '.$jml.' Buku</small>';
-                                                            }else{
-                                                                echo '<p style="color:green;text-align:center;">
-                                                                Tidak Ada Denda</p>';
-                                                            }
-                                                        }
-                                                    ?>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Nomor Buku</td>
-                                                <td>:</td>
-                                                <td>
-                                                    <?= $pinjam->no_buku;?>
+                                                    <?= $pinjam->jmlh_buku;?>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -171,7 +126,7 @@
                                                 <td>:</td>
                                                 <td>
                                                 <?php
-                                                    $pin = $this->M_Admin->get_tableid('tbl_pinjam','pinjam_id',$pinjam->pinjam_id);
+                                                    $pin = $this->M_Admin->get_tableid('pinjam_kelas','pinjam_id',$pinjam->pinjam_id);
                                                     $no =1;
                                                     foreach($pin as $isi)
                                                     {
@@ -215,8 +170,8 @@
                                             </tr>
                                         </table>
                                     </div>
+                                    <a href="<?= base_url('peminjaman');?>" class="btn btn-danger btn-md" style="float: right;">Kembali</a>
                                 </div>
-                                <a href="<?= base_url('transaksi');?>" class="btn btn-danger btn-md" style="float: right;">Kembali</a>
                             </div>
                         </div>
                     </div>

@@ -5,14 +5,14 @@
                 <div class="sparkline12-list" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
                     <div class="sparkline12-hd">
                         <div class="main-sparkline12-hd">
-                            <h1 class="text-center">Form Peminjaman</h1>
+                            <h1 class="text-center">Form Peminjaman Kelas</h1>
                         </div>
                     </div>
                     <div class="sparkline10-graph">
                         <div class="input-knob-dial-wrap">
                         <div class="container-fluid">
                             <div class="row">
-                            <form action="<?php echo base_url('transaksi/prosespinjam');?>" method="POST" enctype="multipart/form-data">
+                            <form action="<?php echo base_url('peminjaman/prosespinjam');?>" method="POST" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <table class="table table-striped">
@@ -54,11 +54,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>Lama Peminjaman</td>
-                                                <td>:</td>
-                                                <td>
-                                                    <input type="number" required placeholder="Lama Pinjam Contoh : 2 Hari (2)" name="lama" class="form-control">
-                                                </td>
+                                                <input type="hidden" name="lama" class="form-control">
                                             </tr>
                                         </table>
                                     </div>
@@ -68,10 +64,17 @@
                                                 <td colspan="3" bgcolor="#0070ff" style="color: white;">Pinjam Buku</td>
                                             </tr>
                                             <tr>
-                                                <td>Nomor Buku</td>
+                                                <td>Kelas</td>
                                                 <td>:</td>
                                                 <td>
-                                                    <input type="text" name="no_buku" class="form-control" placeholder="Masukan Nomor Buku">
+                                                    <input type="text" required placeholder="Masukan Kelas" name="kelas" class="form-control">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jumlah Buku</td>
+                                                <td>:</td>
+                                                <td>
+                                                    <input type="number" name="jmlh_buku" class="form-control" placeholder="Masukan Jumlah Buku">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -99,7 +102,7 @@
                                 </div>
                             <div class="pull-right">
                             <input type="hidden" name="tambah" value="tambah">
-                            <a href="<?= base_url('transaksi');?>" class="btn btn-danger btn-md">Kembali</a>
+                            <a href="<?= base_url('peminjaman');?>" class="btn btn-danger btn-md">Kembali</a>
                             <button type="submit" class="btn btn-success widget-btn-1">Submit</button> 
                             </form>
                             </div>
@@ -184,6 +187,7 @@
                 <th>Nama</th>
                 <th>Jenkel</th>
                 <th>Telepon</th>
+                <th>Level</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -197,6 +201,7 @@
                 <td><?= $isi['nama'];?></td>
                 <td><?= $isi['jenkel'];?></td>
                 <td><?= $isi['telepon'];?></td>
+                <td><?= $isi['level'];?></td>
                 <td style="width:20%;">
                     <button class="btn btn-primary" id="Select_File1" data_id="<?= $isi['anggota_id'];?>">
                     <i class="fa fa-check"> </i> Pilih

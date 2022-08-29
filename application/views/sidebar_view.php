@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> PerpusMan4 | <?= $title_web ?> </title>
+    <title> PerpuSman4 | <?= $title_web ?> </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -146,16 +146,30 @@
                             <?php if($this->uri->uri_string() == 'transaksi/pinjam'){ echo 'active';}?>
                             <?php if($this->uri->uri_string() == 'transaksi/detailpinjam/'.$this->uri->segment('3')){ echo 'active';}?>
                             <?php if($this->uri->uri_string() == 'transaksi/kembalipinjam/'.$this->uri->segment('3')){ echo 'active';}?>">
-                            <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap" aria-hidden="true"></span> <span class="mini-click-non">Transaksi</span></a>
+                            <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap" aria-hidden="true"></span> <span class="mini-click-non">Peminjaman</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
                         <li id="actived" class="<?php if($this->uri->uri_string() == 'transaksi')?>
                             <?php if($this->uri->uri_string() == 'transaksi/pinjam')?>
-                            <?php if($this->uri->uri_string() == 'transaksi/kembalipinjam/'.$this->uri->segment('3'))?>"><a title="All Professors" href="<?= base_url("transaksi");?>"><span class="mini-click-non"><i class="fa fa-download"></i> Peminjaman</span></a></li>
-                                <li <?php if($this->uri->uri_string() == 'transaksi/kembali')?>><a title="Add Professor" href="<?= base_url("transaksi/kembali");?>"><span class="mini-sub-pro"><i class="fa fa-upload"></i> Pengembalian</span></a></li>
+                            <?php if($this->uri->uri_string() == 'transaksi/kembalipinjam/'.$this->uri->segment('3'))?>"><a title="All Professors" href="<?= base_url("transaksi");?>"><span class="mini-click-non"><i class="fa fa-download"></i> Pinjam</span></a></li>
+                                <li <?php if($this->uri->uri_string() == 'transaksi/kembali')?>><a title="Add Professor" href="<?= base_url("transaksi/kembali");?>"><span class="mini-sub-pro"><i class="fa fa-upload"></i> Kembali</span></a></li>
                             </ul>
                         </li>
-                        <li class="<?php if($this->uri->uri_string() == 'transaksi/denda'){ echo 'active';}?> ">
-                            <a title="" href="<?= base_url("transaksi/denda");?>" aria-expanded="false"><span class="educate-icon educate-charts icon-wrap" aria-hidden="true"></span> <span class="mini-click-non">Denda</span></a>
+                        <li class="treeview 
+                            <?php if($this->uri->uri_string() == 'peminjaman'){ echo 'active';}?>
+                            <?php if($this->uri->uri_string() == 'peminjaman/kembali'){ echo 'active';}?>
+                            <?php if($this->uri->uri_string() == 'peminjaman/pinjam'){ echo 'active';}?>
+                            <?php if($this->uri->uri_string() == 'peminjaman/detailpinjam/'.$this->uri->segment('3')){ echo 'active';}?>
+                            <?php if($this->uri->uri_string() == 'peminjaman/kembalipinjam/'.$this->uri->segment('3')){ echo 'active';}?>">
+                            <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap" aria-hidden="true"></span> <span class="mini-click-non">Peminjaman Kelas</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                        <li id="actived" class="<?php if($this->uri->uri_string() == 'peminjaman')?>
+                            <?php if($this->uri->uri_string() == 'peminjaman/pinjam_kelas')?>
+                            <?php if($this->uri->uri_string() == 'peminjaman/kembalipinjam/'.$this->uri->segment('3'))?>"><a title="All Professors" href="<?= base_url("peminjaman");?>"><span class="mini-click-non"><i class="fa fa-download"></i> Pinjam</span></a></li>
+                                <li <?php if($this->uri->uri_string() == 'peminjaman/kembali')?>><a title="Add Professor" href="<?= base_url("peminjaman/kembali");?>"><span class="mini-sub-pro"><i class="fa fa-upload"></i> Kembali</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="<?php if($this->uri->uri_string() == 'peminjaman/denda'){ echo 'active';}?> ">
+                            <a title="" href="<?= base_url("peminjaman/denda");?>" aria-expanded="false"><span class="educate-icon educate-charts icon-wrap" aria-hidden="true"></span> <span class="mini-click-non">Denda</span></a>
                         </li>
                         <?php }?>
 
