@@ -33,7 +33,6 @@
                                         <th>Tahun Buku</th>
                                         <th>Stok Buku</th>
                                         <th>Dipinjam</th>
-                                        <th>Tanggal Masuk</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -68,7 +67,6 @@
                                                 }
                                             ?>
                                         </td>
-                                        <td><?= $isi['tgl_masuk'];?></td>
                                         <td>
                                             <a href="<?= base_url('data/bukuedit/'.$isi['id_buku']);?>"><button class="btn btn-info widget-btn-2"><i class="fa fa-edit"></i></button></a>
                                             <a href="<?= base_url('data/bukudetail/'.$isi['id_buku']);?>">

@@ -80,11 +80,20 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a data-toggle="collapse" data-target="#Tablesmob" href="#"><i class="fa fa-exchange"></i> Transaksi <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                            <li><a data-toggle="collapse" data-target="#Tablesmob" href="#"><i class="fa fa-exchange"></i> Peminjaman <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                                 <ul id="Tablesmob" class="collapse dropdown-header-top">
-                                                    <li><a href="<?= base_url("transaksi");?>">Peminjaman</a>
+                                                    <li><a href="<?= base_url("transaksi");?>">Pinjam</a>
                                                     </li>
-                                                    <li><a href="<?= base_url("transaksi/kembali");?>">Pengembalian</a>
+                                                    <li><a href="<?= base_url("transaksi/kembali");?>">Kembali</a>
+                                                    </li>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a data-toggle="collapse" data-target="#Tablesmob" href="#"><i class="fa fa-exchange"></i> Peminjaman Kelas <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                                <ul id="Tablesmob" class="collapse dropdown-header-top">
+                                                    <li><a href="<?= base_url("peminjaman");?>">Pinjam</a>
+                                                    </li>
+                                                    <li><a href="<?= base_url("peminjaman/kembali");?>">Kembali</a>
                                                     </li>
                                                     </li>
                                                 </ul>
