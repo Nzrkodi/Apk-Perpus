@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
         ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>assets/static/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>assets/static/img/sman4.png">
     <!-- Google Fonts
         ============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
@@ -94,7 +94,7 @@
                 </div>
             </div>
             <div class="text-center login-footer">
-                <p>Copyright © 2022. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">PaerteCode</a></p>
+                <p>Copyright © 2022. All rights reserved. Desain by <a href="https://colorlib.com/wp/templates/">PerpusMelati</a></p>
             </div>
         </div>   
     </div>

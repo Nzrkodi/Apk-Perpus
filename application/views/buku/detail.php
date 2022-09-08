@@ -38,7 +38,7 @@
 							<td>Sampul Buku</td>
 							<td><?php if(!empty($buku->sampul !== "0")){?>
 									<a href="<?= base_url('assets/image/buku/'.$buku->sampul);?>" target="_blank">
-										<img src="<?= base_url('assets/image/buku/'.$buku->sampul);?>" style="width:150px;height:170px;" class="img-responsive">
+										<img src="<?= base_url('assets/image/buku/'.$buku->sampul);?>" style="width:150px;height:200px;" class="img-responsive">
 									</a>
 									<?php }else{ echo '<br/><p style="color:red">* Tidak ada Sampul</p>';}?>
 								</td>
